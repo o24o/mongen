@@ -10,7 +10,7 @@ import (
 func main() {
 	ctx := context.Background()
 	colVendor := tools.GetClient().Database("oneapi").Collection("vendor")
-	first, err := dao.Vendor.Collection(colVendor).WithContext(ctx).Where(dao.Vendor.ID().Eq(1792842643722469376)).First()
+	first, err := dao.Vendor.Collection(colVendor).WithContext(ctx).Where(dao.Vendor.ID().Eq(1792842643722469376)).Where(dao.Vendor.Name().Eq("PP")).First()
 	if err != nil {
 		fmt.Println(err)
 		return
